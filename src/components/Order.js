@@ -7,7 +7,9 @@ class Order extends Component {
   }
 
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    this.setState({
+      isClicked: !this.state.isClicked
+    })
   }
 
   render() {
@@ -29,7 +31,7 @@ class Order extends Component {
         </div>
         <div className="extra content">
           { this.props.sides.length > 0 ?
-              <button className="ui button small" onClick={ this.handleClick }>
+              <button className="ui button small" onClick={this.handleClick}>
                 View Sides
               </button>
             :

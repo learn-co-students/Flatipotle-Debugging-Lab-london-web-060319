@@ -26,27 +26,28 @@ class Form extends Component {
     })
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const itemType = event.target.name
     const item = event.target.value
 
-    !this.state[`${itemType}`].includes(item) ?
+    !this.state[itemType].includes(item) ?
       this.setState({
-        [itemType]: this.state[`${itemType}`].concat(item)
+        [itemType]: this.state[itemType].concat(item)
       })
     :
       this.setState({
-        [itemType]: this.state[`${itemType}`].filter(
+        [itemType]: this.state[itemType].filter(
           ingr => ingr !== item
         )
       })
   }
 
   render() {
+    console.log(this)
     return(
       <div className="ui raised container segment">
         <h1 className="ui block header">Order Form</h1>
-        <form className="ui form" id="order-form" onSubmit={ this.handleSubmit }>
+        <form className="ui form" id="order-form" onSubmit={ (event) => this.handleSubmit(event) }>
           <ProteinForm
             protein={ this.state.protein }
             handleOnChange={ this.handleChange }

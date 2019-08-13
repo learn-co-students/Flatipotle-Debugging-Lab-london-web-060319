@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react'
 
-const FillingForm = (props) => {
+class FillingForm extends React.Component {
+
+  
+  render(){
   return (
     <Fragment>
       <h1><label htmlFor="fillings">Fillings</label></h1>
@@ -83,5 +86,5 @@ const FillingForm = (props) => {
     </Fragment>
   )
 }
-
+}
 export default FillingForm
